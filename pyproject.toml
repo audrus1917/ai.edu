@@ -1,0 +1,44 @@
+[project]
+name = "ai-edu"
+version = "0.1.0"
+description = "Educational AI, PyTorch, YOLO, and LangChain experiments."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "huggingface-hub==1.14.0",
+    "matplotlib==3.10.9",
+    "numpy==2.4.3",
+    "onnx>=1.18.0",
+    "onnx2pytorch>=0.5.1",
+    "onnx2torch>=1.5.15",
+    "opencv-python==4.13.0.92",
+    "pillow==12.2.0",
+    "python-multipart>=0.0.20",
+    "torch==2.7.1+cu118",
+    "torchvision==0.22.1+cu118",
+    "transformers==5.8.0",
+    "ultralytics==8.4.49",
+    "uvicorn>=0.34.0",
+    "zxing-cpp>=2.2.0",
+]
+
+[dependency-groups]
+langchain = [
+    "alembic>=1.14.0",
+    "langchain>=0.3.0",
+    "langchain-ollama>=0.2.0",
+    "langchain-openai>=0.2.0",
+    "psycopg[binary]>=3.2.0",
+    "pypdf>=5.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu118"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu118" }
+torchvision = { index = "pytorch-cu118" }
